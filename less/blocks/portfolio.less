@@ -1,0 +1,22 @@
+.portfolio {
+  .flex-column(flex-start, center);
+  width: @mobile-wrapper;
+  min-height: 85vh;
+  position: relative;
+
+  &::before {
+    .pseudo();
+    width: @mobile-wrapper;
+    height: 1px;
+    top: 0;
+    left: calc(50% - @mobile-wrapper / 2);
+    background-color: @shadow-color;
+  }
+}
+
+.portfolio__title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 400;
+}

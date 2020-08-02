@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Frontend Developer portfolio",
+  "scripts": {
+    "build": "gulp sprite",
+    "start": "gulp start"
+  },
+  "author": "Alexey Nezhnov",
+  "devDependencies": {
+    "autoprefixer": "9.5.x",
+    "browser-sync": "2.26.x",
+    "del": "^5.1.0",
+    "gulp": "4.0.x",
+    "gulp-csso": "^4.0.1",
+    "gulp-less": "4.0.x",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "8.0.x",
+    "gulp-posthtml": "^3.0.5",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgmin": "^3.0.0",
+    "gulp-svgstore": "^7.0.1",
+    "posthtml-include": "^1.4.3"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
