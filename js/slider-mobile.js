@@ -72,12 +72,11 @@
     };
     sliderList.addEventListener('click', onSliderListClick);
 
-    window.addEventListener('load', function () {
+    window.addEventListener('DOMContentLoaded', function () {
       for (var i = 0; i < elements.length; i++) {
         elements[i].checked = false;
       }
       elements[0].checked = true;
       currentElement = getCurrentIndex(currentElement);
-
     })
   })();
