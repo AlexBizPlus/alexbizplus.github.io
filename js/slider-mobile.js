@@ -50,6 +50,19 @@
 
           sliderLink.addEventListener('click', onClickPreventDefault);
         }
+
+        if (!dragged) {
+          var onSliderLinkClick = function () {
+            for (var i = 0; i < elements.length; i++) {
+              elements[i].checked = false;
+            }
+            elements[0].checked = true;
+            currentElement = 0;
+            sliderLink.removeEventListener('click', onClickPreventDefault);
+          };
+
+          sliderLink.addEventListener('click', onSliderLinkClick);
+        }
       };
 
       document.addEventListener('mousemove', onMouseMove);
@@ -77,6 +90,6 @@
         elements[i].checked = false;
       }
       elements[0].checked = true;
-      currentElement = getCurrentIndex(currentElement);
+      currentElement = 0;
     })
   })();
