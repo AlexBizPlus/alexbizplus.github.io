@@ -2,9 +2,23 @@
     var sliderList = document.getElementById('slider-list');
     var sliderLink = document.getElementById('slider-link');
     var elements = sliderList.getElementsByTagName('input');
-    var currentElement = Array.from(elements).findIndex(function (elementArray) {
-      return elementArray.checked;
-    });
+
+
+
+
+    // var currentElement = Array.from(elements).findIndex(function (elementArray) {
+    //   return elementArray.checked;
+    // });
+
+
+
+    var getCurrentIndex = function (index) {
+      return index = Array.from(elements).findIndex(function (elementArray) {
+        return elementArray.checked;
+      });
+    };
+
+    var currentElement = getCurrentIndex(currentElement);
 
     sliderLink.addEventListener('mousedown', function (evt) {
       evt.preventDefault();
@@ -53,7 +67,6 @@
     });
 
     var onSliderListClick = function (evt) {
-
       for (var i = 0; i < elements.length; i++) {
         if (evt.target === elements[i]) {
 
@@ -68,4 +81,8 @@
       }
     };
     sliderList.addEventListener('click', onSliderListClick);
+
+    window.addEventListener('load', function () {
+      currentElement = getCurrentIndex(currentElement);
+    })
   })();
