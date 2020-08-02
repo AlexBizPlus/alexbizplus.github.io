@@ -2,16 +2,6 @@
     var sliderList = document.getElementById('slider-list');
     var sliderLink = document.getElementById('slider-link');
     var elements = sliderList.getElementsByTagName('input');
-
-
-
-
-    // var currentElement = Array.from(elements).findIndex(function (elementArray) {
-    //   return elementArray.checked;
-    // });
-
-
-
     var getCurrentIndex = function (index) {
       return index = Array.from(elements).findIndex(function (elementArray) {
         return elementArray.checked;
@@ -68,7 +58,7 @@
 
     var onSliderListClick = function (evt) {
       for (var i = 0; i < elements.length; i++) {
-        if (evt.target === elements[i]) {
+        if (evt.target === elements[i] && evt.target !== elements[currentElement]) {
 
           sliderLink.classList.remove(`slider__link--${elements[currentElement].id}`);
           elements[currentElement].checked = false;
@@ -83,6 +73,11 @@
     sliderList.addEventListener('click', onSliderListClick);
 
     window.addEventListener('load', function () {
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].checked = false;
+      }
+      elements[0].checked = true;
       currentElement = getCurrentIndex(currentElement);
+
     })
   })();
